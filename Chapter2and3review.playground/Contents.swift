@@ -60,3 +60,31 @@ func addHonorific (name:String) -> String {
 }
 
 addHonorific("Katie")
+
+// クロージャー
+/*
+ {(局所引数名1:引数型1, 局所引数名2:引数型2) -> 戻り値型 in 
+ 処理の塊
+ 必要に応じて return 文で戻り値を返却 
+ }
+ */
+
+// 引数を2倍して返すクロージャー　Blocksのようなもの？
+var f1 = {(i1:Int) -> Int in
+    return  i1 * 2
+}
+
+f1(10)
+
+// クロージャーのキャプチャ
+func makeProduct(number: Double) -> () -> Double {
+    var result = 1.0
+    func product() -> Double {
+        result *= number
+        return result
+    }
+    return product
+}
+
+makeProduct(6.0)
+
