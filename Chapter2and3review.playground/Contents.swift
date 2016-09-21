@@ -24,3 +24,19 @@ for item in array {
 //区間・配列・辞書型
 var fruit = ["apple", "orange", "peach", "grape"]
 var halfArray = fruit[0...(fruit.count/2)]
+
+// 関数
+func helloWorld(to:String, isMorning:Bool) -> String {
+    let greeting = isMorning ? "おはよう" : "こんばんは"
+    return greeting + to
+}
+
+print(helloWorld("花子", isMorning: true))
+
+// 参照渡し inout
+func incriment(inout value:Int){
+     value = value + 1
+}
+
+var num:Int = 10
+incriment(&num)
