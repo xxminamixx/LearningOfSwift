@@ -12,5 +12,11 @@ func showMessage (string:String?) {
     print(string);
 }
 
+// if letでのキャスト
+let array = [100, 200, "300"]
 
-
+for item in array {
+    if let i = item as? Int {
+        var a = i + 10
+    }
+}
