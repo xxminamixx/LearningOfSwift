@@ -20,3 +20,7 @@ for item in array {
         var a = i + 10
     }
 }
+
+//区間・配列・辞書型
+var fruit = ["apple", "orange", "peach", "grape"]
+var halfArray = fruit[0...(fruit.count/2)]
