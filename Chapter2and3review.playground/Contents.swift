@@ -40,3 +40,23 @@ func incriment(inout value:Int){
 
 var num:Int = 10
 incriment(&num)
+
+// ネスト関数
+func addHonorific (name:String) -> String {
+   
+    func genderDecision (name:String) -> Bool{
+        if (name == "Make") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    if (genderDecision(name)) {
+        return "Mr." + name;
+    } else {
+        return  "Ms." + name;
+    }
+}
+
+addHonorific("Katie")
