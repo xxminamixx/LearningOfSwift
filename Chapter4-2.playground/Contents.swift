@@ -85,3 +85,27 @@ var num1:Int = Int(hundred) ?? 0 //Int型の初期化が成功した場合はそ
 var str1 = "non number"
 var str2 = "100"
 var num2:Int = Int(str1) ?? Int(str2) ?? 0 //str1は数字ではないのでstr2が代入される
+
+// Implicitly Unwrapped Optional 型の宣言
+// Optionalでは?を使うがImplicitly Unwrapped Optionalでは!を使う
+// Optional型の変数に対して!を使うとアンラップを意味し、型に!を使うとImplicitly Unwrapped Optionalを意味する
+let implictlyUnwrrapedOptionalString:String! = nil
+
+// イニシャライザで一瞬nilになる必要がある場合
+class A {
+    var b:B!
+    init() {
+        // bプロパティが初期化されていないためBを初期化できない→Implicitly Unwrapped Optionalとする
+        // selfを渡すには自身のOptional以外のプロパティが初期化されている必要がある
+        self.b = B(a: self)
+    }
+}
+
+class B {
+    unowned let a:A
+    init(a:A) {
+        self.a = a
+    }
+}
+
+
